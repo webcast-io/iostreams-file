@@ -21,7 +21,7 @@ describe('iostreams-file', function() {
   describe('getInputStream', function() {
 
     it('should provide a stream given a correct file string', function(done) {
-      ioStream.getInputStream('file:' + __dirname + '/../assets/testfile1.flv', function(err, stream) {
+      ioStream.getInputStream('file:' + __dirname + '/assets/testfile1.flv', function(err, stream) {
         assert.ifError(err);
         assert(stream instanceof fs.ReadStream);
         done();
@@ -29,7 +29,7 @@ describe('iostreams-file', function() {
     });
 
     it('should provide an error given a file string with no file at path', function(done) {
-      ioStream.getInputStream('file:' + __dirname + '/../assets/nonexistent.flv', function(err) {
+      ioStream.getInputStream('file:' + __dirname + '/assets/nonexistent.flv', function(err) {
         assert(err instanceof Error);
         done();
       });
