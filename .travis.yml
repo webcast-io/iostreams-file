@@ -2,14 +2,13 @@ language: node_js
 node_js:
 - '0.10'
 - '0.8'
-before_script:
-  - npm install iostreams
 env:
   matrix:
   - TEST_CMD="mocha"
   - TEST_CMD="lint"
 before_script:
 - npm install -g grunt-cli
+- npm install iostreams
 script:
 - grunt travis
 after_script:
